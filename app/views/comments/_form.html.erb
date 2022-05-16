@@ -1,0 +1,12 @@
+<% @comment = @post.comments.new %>
+<%= form_with model: [@post, @comment], local: true do |form| %>
+  <%= render 'shared/errors', resource: @comment %>
+  <%= form.hidden_field :user_id, value: current_user.id  %>
+
+  <p>
+    <%= form.label :description, 'Содержание комментария' %><br>
+    <%= form.text_area :description, value: @comment.description %>
+  </p>
+
+  <p><%= form.submit 'Сохранить' %></p>
+<% end %>
