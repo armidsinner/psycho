@@ -1,0 +1,24 @@
+<h1>Личный кабинет</h1>
+<h3>Мои посты</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Перейти</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @posts %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Создать новый пост', new_post_path(@post) %>
+</p>
+
+<p>
+  <%= link_to 'Все посты', posts_path %>
+</p>
+
+

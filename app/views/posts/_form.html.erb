@@ -1,0 +1,17 @@
+
+<%= form_with model: @post, local: true do |form| %>
+  <%= render 'shared/errors', resource: @post %>
+  <%= form.hidden_field :user_id, value: current_user.id  %>
+
+  <p>
+    <%= form.label :title, 'Название' %><br>
+    <%= form.text_field :title, value: @post.title %>
+  </p>
+
+  <p>
+    <%= form.label :description, 'Описание' %><br>
+    <%= form.text_area :description, value: @post.description %>
+  </p>
+
+  <p><%= form.submit 'Сохранить' %></p>
+<% end %>
